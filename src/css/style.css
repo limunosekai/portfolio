@@ -1,0 +1,24 @@
+body {
+  height: 20000px;
+  background: linear-gradient(150deg, salmon, red,yellow,white, black);
+}
+
+.progress {
+  position: fixed;
+  width: 4px;
+  height: 140px;
+  top: 40%;
+  left: 20px;
+  background: black;
+  z-index: 10;
+}
+
+.progressBar {
+  position: absolute;
+  width: 4px;
+  height: 0;
+  /* top: 0;
+  left: 0; */
+  background: white;
+  z-index: 11;
+}
