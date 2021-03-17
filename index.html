@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
   <body>
+    <!-- Progress Bar-->
     <div class="progress">
       <div class="progressBar"></div>
     </div>
+
+    <!-- Page 1 -->
     <section class="page1">
       <span class="logo">PORTFOLIO</span>
       <div class="cover"></div>
@@ -43,9 +46,11 @@
         <img class="p1_img_leaf4" src="./assets/images/leaf4.png" alt="#" />
       </div>
     </section>
+
+    <!-- Page 2 -->
     <section class="page2">
       <div class="p2_img_container">
-        <img class="p2_img_top" src="./assets/images/top_leaf.png" alt="#">
+        <div class="p2_img_top"></div>
         <img class="p2_profile_img slide_in" src="assets/images/temp_profile.jpg" alt="#">
       </div>
       <div class="p2_profile_text slide_in">
@@ -62,17 +67,50 @@
       </div>
       </div>
     </section>
+    
+    <!-- Cloud -->
+    <div class="cloud_container">
+      <img class="cloud1" src="./assets/images/cloud1.png" alt="#">
+      <img class="cloud2" src="./assets/images/cloud2.png" alt="#">
+      <img class="frame" src="./assets/images/frame.png" alt="#">
+    </div>
+    <!-- Page 3 -->
     <section class="page3">
-      <h2>page3</h2>
-    </section>
-    <section class="page4">
-      <div class="p3_wrapper">
-        <div class="p3_container">
-          <ul class="p3_slider">
-            <li class="p3_item"></li>
-          </ul>
+      <div id="container">
+        <div class="slide_wrap">
+          <div class="slide_box">
+            <!-- Slide_list -->
+            <div class="slide_list clearfix">
+              <div class="slide_content slide01">
+                <p>1</p>
+              </div>
+              <div class="slide_content slide02">
+                <p>2</p>
+              </div>
+              <div class="slide_content slide03">
+                <p>3</p>
+              </div>
+              <div class="slide_content slide04">
+                <p>4</p>
+              </div>
+              <div class="slide_content slide05">
+                <p>5</p>
+              </div>
+            </div>    
+          </div>
+          <!-- Slide_btn_box -->
+          <div class="slide_btn_box">
+            <img class="slide_btn_prev" src="./assets/images/arrow_left.png" alt="#">
+            <img class="slide_btn_next" src="./assets/images/arrow.png" alt="#">
+          </div>
+          <!-- Slide_pagination -->
+          <ul class="slide_pagination"></ul>
         </div>
       </div>
+    </section>
+
+    <!-- Page 4 -->
+    <section class="page4">
     </section>
   </body>
   <script src="./src/js/main.js"></script>
