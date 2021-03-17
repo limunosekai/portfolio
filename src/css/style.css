@@ -9,7 +9,7 @@ body {
   padding: 0;
   height: 10000px;
   width: 100vw;
-  background: linear-gradient(150deg, salmon, red,purple, black);
+  background: linear-gradient(150deg, salmon, red, purple, black);
 }
 
 /* progress bar */
@@ -22,7 +22,7 @@ body {
   left: 20px;
   z-index: 9998;
   border-radius: 5px;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .progressBar {
@@ -34,7 +34,7 @@ body {
   background: white;
   z-index: 9999;
   border-radius: 5px;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 /* page 1 */
@@ -47,10 +47,10 @@ body {
   position: absolute;
   font-size: 150px;
   color: white;
-  top: 25%;
-  left: 25%;
+  top: calc(50% - 200px);
+  left: calc(50% - 400px);
   z-index: 9994;
-  animation: motion 2s cubic-bezier(0.900, -0.165, 0.150, 1.135) infinite alternate;
+  animation: motion 2s cubic-bezier(0.9, -0.165, 0.15, 1.135) infinite alternate;
 }
 
 /* font logo animation */
@@ -137,8 +137,9 @@ body {
 
 .page2 {
   height: 100vh;
+  position: relative;
 }
-.p2_img_container{
+.p2_img_container {
   text-align: center;
 }
 .p2_img_top {
@@ -147,13 +148,13 @@ body {
   z-index: 100;
 }
 
-.p2_img_profile {
+.p2_profile_img {
   position: absolute;
-  top: 1000px;
-  left: calc(50% - 105px);
+  top: 200px;
+  left: calc(50% - 150px);
   cursor: pointer;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   padding: 5px;
   border: 1px solid #eee;
   border-radius: 50%;
@@ -170,7 +171,7 @@ body {
   transform: translateY(0%) scale(1);
 }
 
-.p2_img_profile.slide_in{
+.p2_profile.slide_in {
   transform: translateY(-10%) scale(0.85);
 }
 
@@ -178,7 +179,8 @@ body {
   position: absolute;
   text-align: center;
   width: 500px;
-  top: 1200px;
+  height: 600px;
+  top: 600px;
   left: calc(50% - 250px);
 }
 

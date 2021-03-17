@@ -74,9 +74,8 @@ window.addEventListener('scroll', pageOneMovingHandler, false);
  * Page2--------------------------------------------------------------
  */
 const sectionTwo = document.querySelector('.page2');
-const profile = document.querySelector('.p2_img_profile');
-const text = document.querySelector('.p2_profile_text');
-
+const profiles = document.querySelectorAll('.slide_in');
+console.log(profiles);
 // Page2 scroll event
 
 function debounce(func, wait = 20, immediate = true) {
@@ -98,17 +97,24 @@ function debounce(func, wait = 20, immediate = true) {
 // image slide
 const checkSlide = (e) => {
   // image
-  const slideInAt = window.scrollY + window.innerHeight - profile.height / 4;
-  const imageBottom = profile.offsetTop + profile.height;
-  const isHalfShown = slideInAt > profile.offsetTop;
-  const isNotScrolledPast = window.scrollY < imageBottom;
-  if (isHalfShown && isNotScrolledPast) {
-    profile.classList.add('active');
-    text.classList.add('active');
-  } else {
-    profile.classList.remove('active');
-    text.classList.remove('active');
-  }
+  profiles.forEach((profile) => {
+    // 스크롤바 절대 위치 - 요소 1/2 위치
+    const slideInAt =
+      window.scrollY + window.innerHeight - profile.offsetHeight / 2;
+    // 이미지 상단 절대 위치
+    const imageTop = window.scrollY + profile.getBoundingClientRect().top;
+    // 이미지 하단 절대 위치
+    const imageBottom = window.scrollY + profile.getBoundingClientRect().bottom;
+    // slideInAt이 각 이미지의 상단보다 클때
+    const isHalfShown = slideInAt > imageTop;
+    // 현재 스크롤된 위치가 이미지 하단보다 작을때
+    const isNotScrolledPast = window.scrollY < imageBottom;
+    if (isHalfShown && isNotScrolledPast) {
+      profile.classList.add('active');
+    } else {
+      profile.classList.remove('active');
+    }
+  });
 };
 
-window.addEventListener('scroll', debounce(checkSlide), false);
+window.addEventListener('scroll', debounce(checkSlide));
