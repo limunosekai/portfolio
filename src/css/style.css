@@ -500,3 +500,58 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* Page 4 */
+
+.page4 p {
+  text-align: center;
+  font-size: 6.5rem;
+  font-family: a-ggok;
+  color: white;
+}
+
+.p4_skill_icon {
+  display: flex;
+  justify-content: space-around;
+}
+
+.p4_skill_icon img {
+  width: 100px;
+  height: auto;
+}
+
+.p4_skill_gauge_container {
+  position: relative;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.p4_skill_gauge_wrapper {
+  width: 40px;
+  height: 100%;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.p4_skill_gauge {
+  /* position: absolute; */
+  width: 40px;
+  height: 0;
+  background: white;
+  border-radius: 50px;
+  z-index: 9999;
+  transition: all 2s ease-out;
+}
+
+.p4_counting_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.num {
+  text-align: center;
+  color: white;
+  font-size: 5rem;
+}
