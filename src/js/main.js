@@ -10,6 +10,7 @@ const leaf3 = document.querySelector('.p1_img_leaf3');
 const leaf4 = document.querySelector('.p1_img_leaf4');
 const leftLeaf = document.querySelector('.p1_img_left_leaf');
 const rightLeaf = document.querySelector('.p1_img_right_leaf');
+const loading = document.querySelector('.loading');
 
 // 스크롤 top 좌표
 let scrollTop = 0;
@@ -22,9 +23,17 @@ let my = 0;
 // 이미지 이동 속도
 let speed = 0.0002;
 
+// 로딩
+const loadingStart = () => {
+  loading.classList.add('active');
+};
+
+loadingStart();
+
 // 초기화
 window.onload = () => {
   cover.style.opacity = 0;
+  loading.classList.remove('active');
 };
 
 // progress bar
