@@ -46,6 +46,8 @@ const progressHandler = (e) => {
   bar.style.height = per + '%';
 };
 
+window.addEventListener('scroll', progressHandler, false);
+
 // Page1 scroll evnet
 const pageOneMovingHandler = (e) => {
   scrollTop = document.documentElement.scrollTop;
@@ -78,7 +80,6 @@ const loop = () => {
 };
 
 window.addEventListener('mousemove', moveHandler, false);
-window.addEventListener('scroll', progressHandler, false);
 window.addEventListener('scroll', pageOneMovingHandler, false);
 
 /**
@@ -261,3 +262,57 @@ Array.prototype.forEach.call(pageDots, function (dot, i) {
       'translate3d(-' + slideWidth * (curIndex + 1) + 'px, 0px, 0px)';
   });
 });
+
+// page4 skill gauge
+
+const options = {
+  useEasing: true,
+  useGrouping: true,
+  separator: ',',
+  decimal: '.',
+  prefix: '',
+  suffix: '',
+};
+let demo0 = new CountUp('num1', 0, 95, 0, 6, options);
+let demo1 = new CountUp('num2', 0, 96, 0, 6, options);
+let demo2 = new CountUp('num3', 0, 92, 0, 6, options);
+let demo3 = new CountUp('num4', 0, 90, 0, 6, options);
+let demo4 = new CountUp('num5', 0, 88, 0, 6, options);
+let demo5 = new CountUp('num6', 0, 85, 0, 6, options);
+let demo6 = new CountUp('num7', 0, 80, 0, 6, options);
+let demo7 = new CountUp('num8', 0, 75, 0, 6, options);
+
+const gauges = document.querySelectorAll('.p4_skill_gauge');
+const gaugeTop =
+  document.querySelector('.p4_skill_gauge_container').getBoundingClientRect()
+    .top + window.pageYOffset;
+
+let scores = [95, 96, 92, 90, 88, 85, 80, 75];
+
+const displayGauge = (score, gauge) => {
+  let per = Math.ceil(((score * 2) / 200) * 100);
+
+  gauge.style.height = per + '%';
+};
+
+const gaugeHandler = (e) => {
+  let scrollBottom = window.innerHeight + window.scrollY;
+  scrollTop = document.documentElement.scrollTop;
+  if (scrollBottom >= gaugeTop) {
+    for (let i = 0; i < gauges.length; i++) {
+      displayGauge(scores[i], gauges[i]);
+      demo0.start();
+      demo1.start();
+      demo2.start();
+      demo3.start();
+      demo4.start();
+      demo5.start();
+      demo6.start();
+      demo7.start();
+    }
+  }
+};
+
+window.addEventListener('scroll', gaugeHandler, false);
+
+//demo.reset();
