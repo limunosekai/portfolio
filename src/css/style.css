@@ -8,6 +8,16 @@
   src: url(../../assets/fonts/a_go.ttf);
 }
 
+@font-face {
+  font-family: a-ggok;
+  src: url(../../assets/fonts/a_ggok.ttf);
+}
+
+@font-face {
+  font-family: a-taebek;
+  src: url(../../assets/fonts/a_taebek.ttf);
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -161,7 +171,8 @@ body {
 .logo {
   position: absolute;
   font-size: 150px;
-  color: white;
+  font-family: a-taebek;
+  color: rgb(255, 81, 0);
   top: calc(50% - 200px);
   left: calc(50% - 400px);
   z-index: 9994;
