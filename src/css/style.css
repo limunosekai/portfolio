@@ -18,6 +18,11 @@
   src: url(../../assets/fonts/a_taebek.ttf);
 }
 
+@font-face {
+  font-family: a-digital;
+  src: url(../../assets/fonts/a_digital.ttf);
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -199,7 +204,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9993;
+  z-index: 9997;
 }
 
 .p1_img_rock1 {
@@ -505,8 +510,9 @@ body {
 
 .page4 p {
   text-align: center;
-  font-size: 6.5rem;
-  font-family: a-ggok;
+  font-size: 5rem;
+  font-family: a-digital;
+  text-shadow: 2px 2px 2px #333;
   color: white;
 }
 
@@ -518,6 +524,9 @@ body {
 .p4_skill_icon img {
   width: 100px;
   height: auto;
+  box-shadow: 2px 2px 2px #333;
+  padding: 10px;
+  border-radius: 50px;
 }
 
 .p4_skill_gauge_container {
@@ -531,16 +540,17 @@ body {
 .p4_skill_gauge_wrapper {
   width: 40px;
   height: 100%;
-  border-radius: 50px;
+  border-radius: 10px;
   background: rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 2px #333;
 }
 
 .p4_skill_gauge {
   /* position: absolute; */
   width: 40px;
   height: 0;
-  background: white;
-  border-radius: 50px;
+  background: linear-gradient(180deg, #f2994a, #f2c94c);
+  border-radius: 10px;
   z-index: 9999;
   transition: all 2s ease-out;
 }
@@ -553,5 +563,8 @@ body {
 .num {
   text-align: center;
   color: white;
-  font-size: 5rem;
+  text-shadow: 2px 2px 2px #333;
+  font-size: 4rem;
+  font-family: a-digital;
+  margin-top: 20px;
 }
