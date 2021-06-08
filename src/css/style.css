@@ -426,29 +426,9 @@ body {
   height: 600px;
 }
 
-.slide_content > p {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 100px;
-  font-weight: bold;
-  color: #555;
-}
-
-.slide_content.slide01 {
-  background: #ddbdff;
-}
-.slide_content.slide02 {
-  background: #9fd6c2;
-}
-.slide_content.slide03 {
-  background: #abe2f7;
-}
-.slide_content.slide04 {
-  background: #f08c78;
-}
-.slide_content.slide05 {
-  background: #fbdb65;
+.slide_content img {
+  width: 600px;
+  height: 600px;
 }
 
 .slide_btn_box > img {
@@ -567,4 +547,96 @@ body {
   font-size: 4rem;
   font-family: a-digital;
   margin-top: 20px;
+}
+
+/* page5 */
+
+.image_wrap {
+  position: relative;
+  height: 1100px;
+  overflow-y: hidden;
+}
+
+.parallax_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-position: top center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  perspective: 300px;
+}
+
+.parallax_image:nth-child(1) {
+  background-image: url(../../assets/images/p5_0.png);
+}
+
+.parallax_image:nth-child(2) {
+  background-image: url(../../assets/images/p5_1.png);
+}
+
+.parallax_image:nth-child(3) {
+  background-image: url(../../assets/images/p5_2.png);
+}
+
+.parallax_image:nth-child(4) {
+  background-image: url(../../assets/images/p5_3.png);
+}
+
+.parallax_image:nth-child(5) {
+  background-image: url(../../assets/images/p5_4.png);
+}
+
+.parallax_image:nth-child(6) {
+  background-image: url(../../assets/images/p5_5.png);
+}
+
+.page6 {
+  width: 100vw;
+  height: 100vh;
+}
+
+.page7 {
+  width: 100vw;
+  height: 100vh;
+}
+
+.page8 {
+  position: absolute;
+  top: 7500px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.page8 .inner_wrap .content_wrap h2 {
+  color: white;
+  font-size: 8rem;
+}
+
+.page8 .inner_wrap .content_wrap p {
+  color: white;
+  font-size: 3rem;
+}
+
+.page8 .inner_wrap .content_wrap a {
+  text-decoration: none;
+  font-size: 3rem;
+  color: white;
+}
+
+.page8 .inner_wrap .content_wrap a:hover {
+  color: bisque;
+}
+
+.page8 .inner_wrap .content_wrap .button {
+  border: none;
+  border-radius: 5px;
+  background-color: #06442f;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.8rem 1.3rem;
 }

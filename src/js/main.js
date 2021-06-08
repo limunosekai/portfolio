@@ -30,12 +30,6 @@ const loadingStart = () => {
 
 loadingStart();
 
-// 초기화
-window.onload = () => {
-  cover.style.opacity = 0;
-  loading.classList.remove('active');
-};
-
 // progress bar
 const progressHandler = (e) => {
   scrollTop = document.documentElement.scrollTop;
@@ -233,7 +227,7 @@ const prevHandler = () => {
 slideBtnPrev.addEventListener('click', prevHandler);
 slideBtnNext.addEventListener('click', nextHandler);
 
-// 패그니션 추가
+// 페이징 추가
 let pageChild = '';
 for (var i = 0; i < slideLen; i++) {
   pageChild += '<li class="dot';
@@ -242,7 +236,7 @@ for (var i = 0; i < slideLen; i++) {
 }
 pagination.innerHTML = pageChild;
 
-// 패그니션 무빙
+// 페이징 무빙
 const pageDots = document.querySelectorAll('.dot');
 
 let curDot;
@@ -262,6 +256,10 @@ Array.prototype.forEach.call(pageDots, function (dot, i) {
       'translate3d(-' + slideWidth * (curIndex + 1) + 'px, 0px, 0px)';
   });
 });
+
+/**
+ * Page4--------------------------------------------------------------
+ */
 
 // page4 skill gauge
 
@@ -315,4 +313,37 @@ const gaugeHandler = (e) => {
 
 window.addEventListener('scroll', gaugeHandler, false);
 
-//demo.reset();
+/**
+ * Page5--------------------------------------------------------------
+ */
+
+const p5_imageWrap = document.querySelector('.image_wrap');
+const p5_parallaxImage = document.querySelectorAll('.parallax_image');
+const totalNum = p5_parallaxImage.length;
+
+const showPage5 = () => {
+  scrollTop = document.documentElement.scrollTop;
+  if (scrollTop >= p5_imageWrap.offsetTop) {
+    p5_parallaxImage.forEach((image, index) => {
+      image.style.position = 'fixed';
+      image.style.transform = `perspective(800px) translateZ(${
+        (scrollTop - p5_imageWrap.offsetTop) / (5 * (totalNum - index))
+      }px)`;
+    });
+  } else {
+    p5_parallaxImage.forEach((image) => {
+      if (image.style.position === 'fixed') {
+        image.style.position = 'absolute';
+        image.style.transform = 'perspective(800px) translateZ(0px)';
+      }
+    });
+  }
+};
+
+window.addEventListener('scroll', showPage5, false);
+
+// onLoad
+window.onload = () => {
+  cover.style.opacity = 0;
+  loading.classList.remove('active');
+};
